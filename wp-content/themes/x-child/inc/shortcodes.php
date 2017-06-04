@@ -54,3 +54,8 @@ function print_projects( $atts, $content = "" ) {
   return ob_get_clean();
 }
 add_shortcode( 'projects', 'print_projects' );
+
+function print_user_menu() {
+  wp_nav_menu( ['theme_location' => 'user_menu'] );
+}
+add_shortcode( 'usermenu', 'print_user_menu' );

@@ -24,7 +24,8 @@ add_filter( 'x_enqueue_parent_stylesheet', '__return_true' );
 // =============================================================================
 
 function w4e_enqueue_styles_and_scripts() {
-  wp_enqueue_style( 'w4e-main-style', 'css/main.css' );
+  // wp_enqueue_style( 'w4e-style', get_stylesheet_directory_uri() . '/style.css' );
+  // wp_enqueue_style( 'w4e-main-style', get_stylesheet_directory_uri() . '/css/main.css', [ 'w4e-style' ] );
 }
 add_action( 'wp_enqueue_scripts', 'w4e_enqueue_styles_and_scripts' );
 

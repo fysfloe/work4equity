@@ -396,11 +396,6 @@ function register_user_menu() {
 }
 add_action( 'after_setup_theme', 'register_user_menu' );
 
-include_once( 'inc/registration.php' );
-
-function add_user_menu() {
-  wp_die('foo');
-}
-add_action( 'x_masthead', 'add_user_menu' );
+require_once( 'inc/registration.php' );
 
 require_once( 'inc/shortcodes.php' );
