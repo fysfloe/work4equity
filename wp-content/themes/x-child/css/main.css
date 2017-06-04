@@ -1,0 +1,11 @@
+.x-navbar .desktop .x-nav > li > a > span {
+  border: none; }
+
+.x-navbar .desktop .x-nav > li > a:not(.x-btn-navbar-woocommerce):hover:after {
+  display: block;
+  width: 100%;
+  content: "";
+  background: #bc0202;
+  height: 5px;
+  bottom: -9px;
+  position: relative; }
