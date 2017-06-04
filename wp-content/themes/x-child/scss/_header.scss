@@ -1,3 +1,24 @@
+header {
+  z-index: 1;
+}
+
+.x-navbar-fixed-top {
+  .home-link {
+    background: $main-color;
+
+    a {
+      background: url(../img/Logo_small_white.png);
+      background-size: auto 85%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    span {
+      opacity: 0;
+    }
+  }
+}
+
 a.x-btn-navbar {
   margin-left: 1em;
 }
@@ -17,7 +38,7 @@ a.x-btn-navbar {
   text-align: center;
 }
 
-.x-navbar .desktop .x-nav > li > a:not(.x-btn-navbar-woocommerce) {
+.x-navbar .desktop .x-nav > li:not(.home-link) > a:not(.x-btn-navbar-woocommerce) {
   overflow: hidden;
 
   &:after {
@@ -35,7 +56,7 @@ a.x-btn-navbar {
 
 .x-navbar .desktop .x-nav > li > a:not(.x-btn-navbar-woocommerce):hover:after,
 .x-navbar .desktop .x-nav > li.current-menu-item > a:not(.x-btn-navbar-woocommerce):after {
-  bottom: -9px;
+  bottom: -7px;
 }
 
 .user-menu {

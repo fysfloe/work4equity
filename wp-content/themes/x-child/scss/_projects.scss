@@ -1,0 +1,147 @@
+// Front page.
+
+ul#projects {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+
+    &:first-child {
+      border-top: 1px solid #eee;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #eee;
+    }
+
+    figure {
+      margin: 0;
+      display: flex;
+      position: relative;
+
+      .project-img-wrap, figcaption {
+        width: 50%;
+      }
+
+      figcaption {
+        padding: 30px 40px;
+        background: white;
+        position: relative;
+
+        h3 {
+          margin-top: 0;
+          font-size: 1.6em;
+          color: $main-color;
+        }
+
+        ul.categories {
+          text-align: right;
+          margin-left: auto;
+          list-style: none;
+          display: flex;
+
+          li {
+            margin-right: 3px;
+
+            &:before {
+              // content: "";
+              display: inline-block;
+              font-family: "FontAwesome";
+              font-style: normal;
+              font-weight: normal;
+              text-decoration: inherit;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+            }
+
+            &.finance {
+              // &:before {
+              //   content: "\f0d6";
+              // }
+            }
+          }
+        }
+
+        .project-meta {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          left: 0;
+          font-family: Montserrat, sans-serif;
+          font-size: 0.8em;
+
+          .end-date {
+            text-align: center;
+            min-width: 100px;
+            color: #0386C2;
+          }
+
+          .date-progress {
+            height: 3px;
+            background: $main-color;
+          }
+        }
+      }
+    }
+
+    span.project-icon {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      text-align: center;
+      margin-left: -21px;
+      margin-top: -22px;
+      background: white;
+      border-radius: 0;
+      transform: rotateZ(44deg) scale3d(1, 1, 1);
+      background: white;
+      overflow: hidden;
+      z-index: 1;
+
+      transition: transform 0.3s ease;
+
+      span {
+        display: block;
+        transform: rotateZ(-44deg);
+
+        .x-icon {
+          opacity: 0;
+          font-size: 24px;
+          line-height: 24px;
+          margin: 10px;
+          position: relative;
+          bottom: 0;
+          transform: translateY(0) rotateZ(0);
+          animation: rocket_down 0.1s ease;
+          -webkit-animation: rocket_down 0.1s ease;
+        }
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      figure figcaption {
+        background: $lightgrey;
+      }
+
+      span.project-icon {
+        transform: rotateZ(44deg) scale3d(1.3, 1.3, 1);
+        background: $lightgrey;
+
+        .x-icon {
+          opacity: 1;
+          color: $main-color;
+          animation: rocket_up 2s ease infinite;
+          -webkit-animation: rocket_up 2s ease infinite;
+        }
+      }
+    }
+  }
+}

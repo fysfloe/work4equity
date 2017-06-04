@@ -1,0 +1,12 @@
+@keyframes rocket_up
+{
+  0% {transform: translateY(0) rotateZ(0); }
+  25% {transform: translateY(0) rotateZ(-45deg);}
+  100% {transform: translateY(-50px) rotateZ(-45deg);}
+}
+
+@keyframes rocket_down
+{
+  0% {transform: translateY(-50px) rotateZ(-45deg);}
+  100%{transform: translateY(0) rotateZ(0); }
+}
