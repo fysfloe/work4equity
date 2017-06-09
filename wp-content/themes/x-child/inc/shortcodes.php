@@ -76,13 +76,13 @@ function print_project_info() {
     <ul class="categories">
       <?php foreach( get_the_terms( $post, 'project_category' ) as $category ) : ?>
         <li class="<?php echo $category->slug ?>">
-          <span><?php echo $category->name ?></span>
+          <span class="sr-only"><?php echo $category->name ?></span>
         </li>
       <?php endforeach; ?>
     </ul>
     <div class="project-description">
       <?php the_excerpt() ?>
-      <p><strong><?php _e( 'by', 'work4equity' ) ?>:</strong> Company<?php echo get_post_meta( get_the_ID(), 'company', true ); ?></p>
+      <p><strong><?php _e( 'by', 'work4equity' ) ?>:</strong> <?php echo get_post_meta( get_the_ID(), 'company', true ); ?></p>
     </div>
     <div class="project-meta">
       <?php
@@ -118,3 +118,72 @@ function print_user_menu() {
   wp_nav_menu( ['theme_location' => 'user_menu'] );
 }
 add_shortcode( 'usermenu', 'print_user_menu' );
+
+function print_experts( $args, $content = "" ) {
+  $attr = shortcode_atts([
+    'categories' => '',
+  ]);
+
+  $args = array(
+  	'posts_per_page'   => 10,
+  	'offset'           => 0,
+  	'category'         => !empty($attr['categories']) ? $attr['categories'] : '',
+  	'orderby'          => 'date',
+  	'order'            => 'DESC',
+  	'post_type'        => 'expert',
+  	'post_status'      => 'publish',
+  	'suppress_filters' => true
+  );
+
+  $experts = get_posts( $args );
+
+  ob_start();
+
+  global $post;
+
+  ?>
+
+  <ul id="experts">
+
+    <?php
+    $i = 0;
+    foreach ( $experts as $post ) : setup_postdata( $post ); ?>
+
+    	<li>
+    		<a href="<?php the_permalink(); ?>">
+          <figure>
+            <div class="expert-img-wrap">
+              <?php the_post_thumbnail( 'full' ) ?>
+            </div>
+            <figcaption>
+              <div>
+                <h3><?php the_title() ?></h3>
+                <div class="expert-info">
+                  <?php echo get_post_meta( get_the_ID(), 'position', true ); ?>
+                </div>
+              </div>
+              <ul class="categories">
+                <?php foreach( get_the_terms( $post, 'expert_category' ) as $category ) : ?>
+                  <li class="<?php echo $category->slug ?>">
+                    <span class="sr-only"><?php echo $category->name ?></span>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+    	</li>
+
+    <?php
+    $i++;
+    endforeach;
+    wp_reset_postdata();
+    ?>
+
+  </ul>
+
+  <?php
+
+  return ob_get_clean();
+}
+add_shortcode( 'experts', 'print_experts' );

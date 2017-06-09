@@ -53,6 +53,29 @@ a.x-btn-navbar {
     position: relative;
     transition: bottom 0.3s ease; }
 
+.x-navbar .desktop .x-nav > li:not(.home-link) a span:before {
+  content: "";
+  display: inline-block;
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 5px; }
+
+.x-navbar .desktop .x-nav > li:not(.home-link).menu-experts a span:before {
+  content: "\f0eb"; }
+
+.x-navbar .desktop .x-nav > li:not(.home-link).menu-projects a span:before {
+  content: "\f135"; }
+
+.x-navbar .desktop .x-nav > li:not(.home-link).menu-blog a span:before {
+  content: "\f27a"; }
+
+.x-navbar .desktop .x-nav > li:not(.home-link).menu-about a span:before {
+  content: "\f05a"; }
+
 .x-navbar .desktop .x-nav > li > a:not(.x-btn-navbar-woocommerce):hover:after,
 .x-navbar .desktop .x-nav > li.current-menu-item > a:not(.x-btn-navbar-woocommerce):after {
   bottom: -7px; }
@@ -97,97 +120,211 @@ a.x-btn-navbar {
 ul#projects {
   margin: 0;
   padding: 0;
-  list-style: none; }
-  ul#projects > li {
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee; }
-    ul#projects > li:first-child {
-      border-top: 1px solid #eee; }
-    ul#projects > li:last-child {
-      border-bottom: 1px solid #eee; }
-    ul#projects > li figure {
-      margin: 0;
-      display: flex;
+  list-style: none;
+  box-shadow: 0 0 3px lightgrey; }
+  ul#projects > li:nth-child(even) figure figcaption ul.categories {
+    right: auto;
+    left: 5px; }
+  ul#projects > li figure {
+    margin: 0;
+    display: flex;
+    position: relative;
+    transform: scale3d(1, 1, 1) translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: transform 0.3s ease; }
+    ul#projects > li figure .project-img-wrap, ul#projects > li figure figcaption {
+      width: 50%; }
+    ul#projects > li figure figcaption {
+      padding: 30px 40px;
+      background: white;
       position: relative; }
-      ul#projects > li figure .project-img-wrap, ul#projects > li figure figcaption {
-        width: 50%; }
-      ul#projects > li figure figcaption {
-        padding: 30px 40px;
-        background: white;
-        position: relative; }
-        ul#projects > li figure figcaption h3 {
-          margin-top: 0;
-          font-size: 1.6em;
+      ul#projects > li figure figcaption h3 {
+        margin-top: 0;
+        font-size: 1.6em;
+        color: #0386C2;
+        display: inline; }
+      ul#projects > li figure figcaption ul.categories {
+        text-align: center;
+        list-style: none;
+        display: inline-flex;
+        margin: 0 0 0 10px;
+        font-style: italic; }
+        ul#projects > li figure figcaption ul.categories li {
+          width: 20px; }
+          ul#projects > li figure figcaption ul.categories li:before {
+            content: "";
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            font-size: 0.8em;
+            color: white; }
+          ul#projects > li figure figcaption ul.categories li.finance:before {
+            color: #AA272D;
+            content: "fi"; }
+          ul#projects > li figure figcaption ul.categories li.marketing:before {
+            color: #DEB12D;
+            content: "ma"; }
+          ul#projects > li figure figcaption ul.categories li.it:before {
+            color: #2462B0;
+            content: "it"; }
+          ul#projects > li figure figcaption ul.categories li.law:before {
+            color: #6B6B6B;
+            content: "la"; }
+      ul#projects > li figure figcaption .project-meta {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        font-family: Montserrat, sans-serif;
+        font-size: 0.8em; }
+        ul#projects > li figure figcaption .project-meta .end-date {
+          text-align: center;
+          min-width: 100px;
           color: #0386C2; }
-        ul#projects > li figure figcaption ul.categories {
-          text-align: right;
-          margin-left: auto;
-          list-style: none;
-          display: flex; }
-          ul#projects > li figure figcaption ul.categories li {
-            margin-right: 3px; }
-            ul#projects > li figure figcaption ul.categories li:before {
-              display: inline-block;
-              font-family: "FontAwesome";
-              font-style: normal;
-              font-weight: normal;
-              text-decoration: inherit;
-              text-rendering: auto;
-              -webkit-font-smoothing: antialiased; }
-        ul#projects > li figure figcaption .project-meta {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          left: 0;
-          font-family: Montserrat, sans-serif;
-          font-size: 0.8em; }
-          ul#projects > li figure figcaption .project-meta .end-date {
-            text-align: center;
-            min-width: 100px;
-            color: #0386C2; }
-          ul#projects > li figure figcaption .project-meta .date-progress {
-            height: 3px;
-            background: #0386C2; }
-    ul#projects > li span.project-icon {
+        ul#projects > li figure figcaption .project-meta .date-progress {
+          height: 3px;
+          background: #0386C2; }
+  ul#projects > li span.project-icon {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    margin-left: -21px;
+    margin-top: -22px;
+    background: white;
+    border-radius: 0;
+    transform: rotateZ(44deg) scale3d(1, 1, 1);
+    background: white;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.3s ease; }
+    ul#projects > li span.project-icon span {
       display: block;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      text-align: center;
-      margin-left: -21px;
-      margin-top: -22px;
-      background: white;
-      border-radius: 0;
-      transform: rotateZ(44deg) scale3d(1, 1, 1);
-      background: white;
-      overflow: hidden;
-      z-index: 1;
-      transition: transform 0.3s ease; }
-      ul#projects > li span.project-icon span {
-        display: block;
-        transform: rotateZ(-44deg); }
-        ul#projects > li span.project-icon span .x-icon {
-          opacity: 0;
-          font-size: 24px;
-          line-height: 24px;
-          margin: 10px;
-          position: relative;
-          bottom: 0;
-          transform: translateY(0) rotateZ(0);
-          animation: rocket_down 0.1s ease;
-          -webkit-animation: rocket_down 0.1s ease; }
+      transform: rotateZ(-44deg); }
+      ul#projects > li span.project-icon span .x-icon {
+        opacity: 0;
+        font-size: 24px;
+        line-height: 24px;
+        margin: 10px;
+        position: relative;
+        bottom: 0;
+        transform: translateY(0) rotateZ(0);
+        animation: rocket_down 0.1s ease;
+        -webkit-animation: rocket_down 0.1s ease; }
   ul#projects a {
     color: inherit; }
-    ul#projects a:hover figure figcaption {
-      background: #f9f9f9; }
-    ul#projects a:hover span.project-icon {
-      transform: rotateZ(44deg) scale3d(1.3, 1.3, 1);
-      background: #f9f9f9; }
-      ul#projects a:hover span.project-icon .x-icon {
+    ul#projects a:hover figure, ul#projects a:focus figure {
+      transform: scale3d(1.02, 1.02, 1.02) translateZ(0);
+      z-index: 1; }
+    ul#projects a:hover span.project-icon, ul#projects a:focus span.project-icon {
+      transform: rotateZ(44deg) scale3d(1.3, 1.3, 1); }
+      ul#projects a:hover span.project-icon .x-icon, ul#projects a:focus span.project-icon .x-icon {
         opacity: 1;
         color: #0386C2;
         animation: rocket_up 2s ease infinite;
         -webkit-animation: rocket_up 2s ease infinite; }
+
+ul#experts {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  ul#experts li {
+    margin: 10px 0; }
+  ul#experts .expert-info {
+    line-height: 1.2;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: darkgrey; }
+  ul#experts figure {
+    display: flex;
+    margin: 0;
+    border-radius: 80px 0 0 80px;
+    box-shadow: 0 0 3px lightgrey;
+    overflow: hidden;
+    background: white;
+    transform: scale3d(1, 1, 1);
+    transition: transform 0.3s ease; }
+    ul#experts figure .expert-img-wrap {
+      width: 80px;
+      overflow: hidden;
+      height: 80px; }
+    ul#experts figure figcaption {
+      display: flex;
+      padding: 0 5px; }
+      ul#experts figure figcaption ul.categories {
+        text-align: center;
+        list-style: none;
+        display: inline-flex;
+        margin: 0 0 0 10px;
+        font-style: italic;
+        align-items: center; }
+        ul#experts figure figcaption ul.categories li {
+          width: 20px; }
+          ul#experts figure figcaption ul.categories li:before {
+            content: "";
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            font-size: 0.8em;
+            color: white; }
+          ul#experts figure figcaption ul.categories li.finance:before {
+            color: #AA272D;
+            content: "fi"; }
+          ul#experts figure figcaption ul.categories li.marketing:before {
+            color: #DEB12D;
+            content: "ma"; }
+          ul#experts figure figcaption ul.categories li.it:before {
+            color: #2462B0;
+            content: "it"; }
+          ul#experts figure figcaption ul.categories li.law:before {
+            color: #6B6B6B;
+            content: "la"; }
+      ul#experts figure figcaption > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+      ul#experts figure figcaption h3 {
+        font-size: 1.3em;
+        margin: 0; }
+  ul#experts a {
+    color: inherit; }
+    ul#experts a:hover figure, ul#experts a:focus figure {
+      transform: scale3d(1.02, 1.02, 1.02); }
+
+footer.x-colophon.top {
+  background: url("../img/dark_wall.png") repeat;
+  color: darkgrey; }
+  footer.x-colophon.top img.logo {
+    width: 200px;
+    display: block;
+    margin-bottom: 20px; }
+  footer.x-colophon.top h4 {
+    color: darkgrey;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1.2em;
+    margin-bottom: 1em; }
+  footer.x-colophon.top .menu li {
+    border-bottom: 1px dotted #323232;
+    text-transform: none;
+    letter-spacing: normal; }
+    footer.x-colophon.top .menu li:first-child {
+      border-top: 1px dotted #323232; }
+    footer.x-colophon.top .menu li a {
+      color: #656565;
+      margin: 5px 0 5px 21px; }
+      footer.x-colophon.top .menu li a:hover, footer.x-colophon.top .menu li a:focus {
+        color: white; }
+
+footer.x-colophon.bottom {
+  padding: 1% 0; }
+
+.x-scroll-top.right {
+  right: 10px;
+  border-radius: 100%;
+  padding-top: 2px; }
 
 .sr-only {
   position: absolute;
@@ -198,3 +335,11 @@ ul#projects {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0; }
+
+a {
+  color: #0386C2; }
+  a:hover, a:focus {
+    color: #01415e; }
+
+.x-main {
+  background: #f3f3f3; }

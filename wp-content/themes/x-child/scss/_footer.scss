@@ -1,0 +1,49 @@
+footer.x-colophon.top {
+  background: url('../img/dark_wall.png') repeat;
+  color: darkgrey;
+
+  img.logo {
+    width: 200px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    color: darkgrey;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  .menu {
+    li {
+      border-bottom: 1px dotted darken($footer-darkgrey, 20);
+      text-transform: none;
+      letter-spacing: normal;
+
+      &:first-child {
+        border-top: 1px dotted darken($footer-darkgrey, 20);
+      }
+
+      a {
+        color: $footer-darkgrey;
+        margin: 5px 0 5px 21px;
+
+        &:hover, &:focus {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+footer.x-colophon.bottom {
+  padding: 1% 0;
+}
+
+.x-scroll-top.right {
+  right: 10px;
+  border-radius: 100%;
+  padding-top: 2px;
+}

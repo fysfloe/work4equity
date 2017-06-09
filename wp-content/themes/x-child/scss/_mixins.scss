@@ -1,0 +1,60 @@
+@mixin categories {
+  text-align: center;
+  list-style: none;
+  display: inline-flex;
+  margin: 0 0 0 10px;
+  font-style: italic;
+
+  li {
+    width: 20px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 0.8em;
+      color: white;
+    }
+
+    &.finance {
+      // background: #AA272D;
+
+      &:before {
+        color: #AA272D;
+        content: "fi";
+        // background: url( '../img/category-icons/finance.svg' );
+      }
+    }
+
+    &.marketing {
+      // background: #DEB12D;
+
+      &:before {
+        color: #DEB12D;
+        content: "ma";
+        // background: url( '../img/category-icons/marketing.svg' );
+      }
+    }
+
+    &.it {
+      // background: #2462B0;
+
+      &:before {
+        color: #2462B0;
+        content: "it";
+        // background: url( '../img/category-icons/it.svg' );
+      }
+    }
+
+    &.law {
+      // background: #6B6B6B;
+
+      &:before {
+        color: #6B6B6B;
+        content: "la";
+        // background: url( '../img/category-icons/law.svg' );
+      }
+    }
+  }
+}

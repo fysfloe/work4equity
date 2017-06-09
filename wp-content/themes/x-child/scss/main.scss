@@ -1,7 +1,10 @@
 @import 'variables';
+@import 'mixins';
 @import 'animations';
 @import 'header';
 @import 'projects';
+@import 'experts';
+@import 'footer';
 
 .sr-only {
   position: absolute;
@@ -12,4 +15,16 @@
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+a {
+  color: $main-color;
+
+  &:hover, &:focus {
+    color: darken($main-color, 20);
+  }
+}
+
+.x-main {
+  background: $lightgrey;
 }
