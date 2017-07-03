@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     babel: {
       options: {
         sourceMap: true,
-        presets: ['es2015']
+        presets: ['react','es2015']
       },
       dist: {
         files: {
@@ -43,14 +43,23 @@ module.exports = function(grunt) {
         }
       }
     },
+    browserify: {
+      dist: {
+        options: {
+           transform: [['babelify', {presets: ['es2015', 'react']}]]
+        },
+        src: ['js/react/react.js'],
+        dest: 'js/dist/react_bundle.js',
+      }
+    },
     watch: {
       options: {
         spawn: false,
         livereload: true
       },
       scripts: {
-        files: ['js/*.js', 'js/admin/**/src/*.js', 'js/admin/**/*.js', 'js/admin/*.js', 'scss/*.scss', 'scss/admin/*.scss', 'gruntfile.js'],
-        tasks: ['concat','sass','babel']
+        files: ['js/**/*.js', 'js/admin/**/src/*.js', 'js/admin/**/*.js', 'js/admin/*.js', 'scss/*.scss', 'scss/admin/*.scss', 'gruntfile.js'],
+        tasks: ['concat','sass','babel','browserify']
       }
     }
   });
@@ -58,5 +67,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-babel');
-  grunt.registerTask('default', ['concat', 'sass', 'watch', 'babel']);
+  grunt.loadNpmTasks('grunt-browserify');
+  grunt.registerTask('default', ['concat', 'sass', 'browserify', 'watch', 'babel']);
 } // wrapper function

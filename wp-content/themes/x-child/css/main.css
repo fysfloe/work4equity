@@ -293,6 +293,200 @@ ul#experts {
     ul#experts a:hover figure, ul#experts a:focus figure {
       transform: scale3d(1.02, 1.02, 1.02); }
 
+.expert-profile header {
+  background: url("../img/clean_textile.png") repeat;
+  padding: 20px 0;
+  border-top: 3px solid #eaeaea;
+  box-shadow: 0 0 3px lightgrey;
+  position: relative;
+  top: 90px; }
+  .expert-profile header figure {
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: -90px; }
+    .expert-profile header figure .entry-featured {
+      border-radius: 100%;
+      overflow: hidden;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      border: 3px solid #eaeaea; }
+    .expert-profile header figure .expert-img-wrap {
+      border-radius: 100%;
+      box-shadow: 0 0 5px lightgrey;
+      overflow: hidden;
+      width: 100%;
+      height: 100%; }
+    .expert-profile header figure figcaption h2 {
+      margin: 10px 0 0;
+      color: #656565;
+      font-size: 1.75em;
+      letter-spacing: 1px; }
+    .expert-profile header figure figcaption h3 {
+      margin: 0;
+      color: darkgrey;
+      font-size: 1.25em; }
+  .expert-profile header #expert-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+    .expert-profile header #expert-nav ul {
+      margin: 0;
+      list-style: none;
+      display: flex;
+      align-items: center; }
+      .expert-profile header #expert-nav ul li {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid #f3f3f3;
+        border-right: 1px solid #f3f3f3; }
+        .expert-profile header #expert-nav ul li a {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          width: 100%;
+          padding: 10px;
+          background-color: white;
+          transition: background-color 0.3s ease;
+          border-top: 2px solid transparent; }
+          .expert-profile header #expert-nav ul li a i {
+            font-size: 1.3em; }
+          .expert-profile header #expert-nav ul li a:hover, .expert-profile header #expert-nav ul li a:active {
+            background-color: #f3f3f3;
+            border-top: 2px solid; }
+        .expert-profile header #expert-nav ul li:last-of-type {
+          border-right: none; }
+
+.expert-profile .expert-content-boxes-wrapper {
+  margin-top: 120px; }
+  .expert-profile .expert-content-boxes-wrapper .edit-box {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    padding: 100px 50px; }
+    .expert-profile .expert-content-boxes-wrapper .edit-box .edit-inner {
+      background: white;
+      width: 100%;
+      height: auto;
+      max-width: 768px;
+      margin: 0 auto;
+      box-shadow: 0 0 25px black; }
+      .expert-profile .expert-content-boxes-wrapper .edit-box .edit-inner .edit-header {
+        background: #f3f3f3;
+        padding: 20px;
+        display: flex;
+        align-items: center; }
+        .expert-profile .expert-content-boxes-wrapper .edit-box .edit-inner .edit-header h3 {
+          margin: 0;
+          font-size: 1.5em; }
+        .expert-profile .expert-content-boxes-wrapper .edit-box .edit-inner .edit-header > a {
+          margin-left: auto;
+          font-size: 1.3em; }
+      .expert-profile .expert-content-boxes-wrapper .edit-box .edit-inner .edit-main  {
+        padding: 20px; }
+        .expert-profile .expert-content-boxes-wrapper .edit-box .edit-inner .edit-main  textarea {
+          width: 100%;
+          min-height: 150px;
+          border-radius: 5px; }
+      .expert-profile .expert-content-boxes-wrapper .edit-box .edit-inner .edit-footer {
+        display: flex;
+        align-items: center;
+        padding: 20px; }
+        .expert-profile .expert-content-boxes-wrapper .edit-box .edit-inner .edit-footer .edit-submit {
+          margin-right: 10px; }
+  .expert-profile .expert-content-boxes-wrapper > div {
+    padding: 20px 40px 40px;
+    margin: 0 0 25px;
+    background: white;
+    box-shadow: 0 0 3px lightgrey;
+    position: relative; }
+    .expert-profile .expert-content-boxes-wrapper > div div.box-header {
+      text-align: center;
+      margin-bottom: 20px; }
+      .expert-profile .expert-content-boxes-wrapper > div div.box-header i {
+        font-size: 2em;
+        line-height: 1.5; }
+      .expert-profile .expert-content-boxes-wrapper > div div.box-header h3 {
+        margin: 0;
+        font-size: 1.75em; }
+      .expert-profile .expert-content-boxes-wrapper > div div.box-header a.edit-section {
+        position: absolute;
+        top: 10px;
+        right: 10px; }
+        .expert-profile .expert-content-boxes-wrapper > div div.box-header a.edit-section i {
+          font-size: 1.2em; }
+    .expert-profile .expert-content-boxes-wrapper > div#experience {
+      float: left;
+      width: 49%;
+      margin-right: 2%; }
+      .expert-profile .expert-content-boxes-wrapper > div#experience ul.experience {
+        text-align: center;
+        margin: 0;
+        list-style: none; }
+        .expert-profile .expert-content-boxes-wrapper > div#experience ul.experience li {
+          margin: 0 auto;
+          max-width: 460px;
+          position: relative;
+          padding: 1em 0;
+          border-left: 0.2em solid #0386C2; }
+          .expert-profile .expert-content-boxes-wrapper > div#experience ul.experience li:before {
+            content: "";
+            display: block;
+            width: 1em;
+            height: 1em;
+            background: white;
+            position: absolute;
+            left: -0.55em;
+            border-radius: 100%;
+            top: 50%;
+            margin-top: -0.5em;
+            border: 0.2em solid #0386C2; }
+          .expert-profile .expert-content-boxes-wrapper > div#experience ul.experience li .edit-section {
+            position: absolute;
+            top: 1em;
+            right: 1em; }
+        .expert-profile .expert-content-boxes-wrapper > div#experience ul.experience .timespan {
+          color: darkgrey; }
+        .expert-profile .expert-content-boxes-wrapper > div#experience ul.experience h4 {
+          font-size: 1.2em;
+          text-transform: uppercase;
+          margin: 0 0 0.2em 0.4em;
+          display: inline-block; }
+    .expert-profile .expert-content-boxes-wrapper > div#skills {
+      float: left;
+      width: 49%; }
+      .expert-profile .expert-content-boxes-wrapper > div#skills ul.skills {
+        margin: 0;
+        list-style: none; }
+        .expert-profile .expert-content-boxes-wrapper > div#skills ul.skills li {
+          position: relative;
+          margin-bottom: 1.5em; }
+        .expert-profile .expert-content-boxes-wrapper > div#skills ul.skills .edit-section {
+          position: absolute;
+          top: 0;
+          right: 1em; }
+        .expert-profile .expert-content-boxes-wrapper > div#skills ul.skills h4 {
+          font-size: 1.2em;
+          text-transform: uppercase;
+          margin: 0 0 0.4em; }
+        .expert-profile .expert-content-boxes-wrapper > div#skills ul.skills .skill-level {
+          font-weight: bold;
+          font-size: 0.8em;
+          color: #0386C2; }
+        .expert-profile .expert-content-boxes-wrapper > div#skills ul.skills .skill-level-bar {
+          height: 0.3em;
+          background: #0386C2;
+          border-radius: 0 0.2em 0.2em 0; }
+    .expert-profile .expert-content-boxes-wrapper > div#projects {
+      clear: both; }
+
 footer.x-colophon.top {
   background: url("../img/dark_wall.png") repeat;
   color: darkgrey; }

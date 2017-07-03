@@ -18,7 +18,7 @@ ul#experts {
     display: flex;
     margin: 0;
     border-radius: 80px 0 0 80px;
-    box-shadow: 0 0 3px lightgrey;
+    box-shadow: $light-boxshadow;
     overflow: hidden;
     background: white;
     transform: scale3d(1,1,1);

@@ -1,0 +1,289 @@
+.expert-profile {
+  header {
+    background: url('../img/clean_textile.png') repeat;
+    padding: 20px 0;
+    border-top: 3px solid #eaeaea;
+    box-shadow: $light-boxshadow;
+    position: relative;
+    top: 90px;
+
+    figure {
+      text-align: center;
+      margin: 0;
+      position: relative;
+      top: -90px;
+
+      .entry-featured {
+        border-radius: 100%;
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border: 3px solid #eaeaea;
+      }
+
+      .expert-img-wrap {
+        border-radius: 100%;
+        box-shadow: 0 0 5px lightgrey;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+
+      figcaption {
+        h2 {
+          margin: 10px 0 0;
+          color: $footer-darkgrey;
+          font-size: 1.75em;
+          letter-spacing: 1px;
+        }
+
+        h3 {
+          margin: 0;
+          color: darkgrey;
+          font-size: 1.25em;
+        }
+      }
+    }
+
+    #expert-nav {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+
+      ul {
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        li {
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-top: 1px solid $lightgrey;
+          border-right: 1px solid $lightgrey;
+
+          a {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            transition: background-color 0.3s ease;
+            border-top: 2px solid transparent;
+
+            i {
+              font-size: 1.3em;
+            }
+
+            &:hover, &:active {
+              background-color: $lightgrey;
+              border-top: 2px solid;
+            }
+          }
+
+          &:last-of-type {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+
+  .expert-content-boxes-wrapper {
+    margin-top: 120px;
+
+    .edit-box {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      z-index: 10000;
+      top: 0;
+      left: 0;
+      padding: 100px 50px;
+
+      .edit-inner {
+        background: white;
+        width: 100%;
+        height: auto;
+        max-width: 768px;
+        margin: 0 auto;
+        box-shadow: 0 0 25px black;
+
+        .edit-header {
+          background: $lightgrey;
+          padding: 20px;
+          display: flex;
+          align-items: center;
+
+          h3 {
+            margin: 0;
+            font-size: 1.5em;
+          }
+
+          > a {
+            margin-left: auto;
+            font-size: 1.3em;
+          }
+        }
+
+        .edit-main {
+          padding: 20px;
+
+          textarea {
+            width: 100%;
+            min-height: 150px;
+            border-radius: 5px;
+          }
+        }
+
+        .edit-footer {
+          display: flex;
+          align-items: center;
+          padding: 20px;
+
+          .edit-submit {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    > div {
+      padding: 20px 40px 40px;
+      margin: 0 0 25px;
+      background: white;
+      box-shadow: $light-boxshadow;
+      position: relative;
+
+      div.box-header {
+        text-align: center;
+        margin-bottom: 20px;
+
+        i {
+          font-size: 2em;
+          line-height: 1.5;
+        }
+
+        h3 {
+          margin: 0;
+          font-size: 1.75em;
+        }
+
+        a.edit-section {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+
+          i {
+            font-size: 1.2em;
+          }
+        }
+      }
+
+      &#experience {
+        float: left;
+        width: 49%;
+        margin-right: 2%;
+
+        ul.experience {
+          text-align: center;
+          margin: 0;
+          list-style: none;
+
+          li {
+            margin: 0 auto;
+            max-width: 460px;
+            position: relative;
+            padding: 1em 0;
+            border-left: 0.2em solid $main-color;
+            // border-top: 0.1em solid #eee;
+            // border-right: 0.1em solid #eee;
+            //
+            // &:last-of-type {
+            //   border-bottom: 0.1em solid #eee;
+            // }
+
+            &:before {
+              content: "";
+              display: block;
+              width: 1em;
+              height: 1em;
+              background: white;
+              position: absolute;
+              left: -0.55em;
+              border-radius: 100%;
+              top: 50%;
+              margin-top: -0.5em;
+              border: 0.2em solid $main-color;
+            }
+
+            .edit-section {
+              position: absolute;
+              top: 1em;
+              right: 1em;
+            }
+          }
+
+          .timespan {
+            color: darkgrey;
+          }
+
+          h4 {
+            font-size: 1.2em;
+            text-transform: uppercase;
+            margin: 0 0 0.2em 0.4em;
+            display: inline-block;
+          }
+        }
+      }
+
+      &#skills {
+        float: left;
+        width: 49%;
+
+        ul.skills {
+          margin: 0;
+          list-style: none;
+
+          li {
+            position: relative;
+            margin-bottom: 1.5em;
+          }
+
+          .edit-section {
+            position: absolute;
+            top: 0;
+            right: 1em;
+          }
+
+          h4 {
+            font-size: 1.2em;
+            text-transform: uppercase;
+            margin: 0 0 0.4em;
+          }
+
+          .skill-level {
+            font-weight: bold;
+            font-size: 0.8em;
+            color: $main-color;
+          }
+
+          .skill-level-bar {
+            height: 0.3em;
+            background: $main-color;
+            border-radius: 0 0.2em 0.2em 0;
+          }
+        }
+      }
+
+      &#projects {
+        clear: both;
+      }
+    }
+  }
+}

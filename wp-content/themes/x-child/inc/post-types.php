@@ -1,51 +1,4 @@
 <?php
-
-// =============================================================================
-// FUNCTIONS.PHP
-// -----------------------------------------------------------------------------
-// Overwrite or add your own custom functions to X in this file.
-// =============================================================================
-
-// =============================================================================
-// TABLE OF CONTENTS
-// -----------------------------------------------------------------------------
-//   01. Enqueue Parent Stylesheet
-//   02. Additional Functions
-// =============================================================================
-
-// Enqueue Parent Stylesheet
-// =============================================================================
-
-add_filter( 'x_enqueue_parent_stylesheet', '__return_true' );
-
-
-// Additional Functions
-// =============================================================================
-
-function add_custom_post_types() {
-  // Experts
-  register_expert_post_type();
-
-  // Projects
-  register_project_post_type();
-
-  // Companies
-  register_company_post_type();
-}
-add_action( 'init', 'add_custom_post_types' );
-
-function add_custom_post_type_taxonomies() {
-  // Experts
-  register_expert_taxonomies();
-
-  // Projects
-  register_project_taxonomies();
-
-  // Companies
-  register_company_taxonomies();
-}
-add_action( 'init', 'add_custom_post_type_taxonomies' );
-
 function register_expert_post_type() {
   $labels = array(
 		'name'               => _x( 'Experts', 'post type general name', 'work4equity' ),
@@ -378,24 +331,3 @@ function register_company_taxonomies() {
 	 'company_tag', [ 'company' ], $args
 	);
 }
-
-function add_roles_on_theme_activation() {
-  add_role( 'expert', __( 'Expert', 'work4equity' ), array( 'read' => true, 'level_0' => true ) );
-  add_role( 'company', __( 'Company', 'work4equity' ), array( 'read' => true, 'level_0' => true ) );
-}
-add_action( 'after_switch_theme', 'add_roles_on_theme_activation', 10, 2 );
-
-function remove_roles_on_theme_deactivation() {
-  remove_role( 'expert' );
-  remove_role( 'company' );
-}
-add_action( 'switch_theme', 'remove_roles_on_theme_deactivation', 10, 2 );
-
-function register_user_menu() {
-  register_nav_menu( 'user_menu', __( 'User Menu', 'work4equity' ) );
-}
-add_action( 'after_setup_theme', 'register_user_menu' );
-
-require_once( 'inc/registration.php' );
-
-require_once( 'inc/shortcodes.php' );

@@ -1,0 +1,15 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "e68406-ftp.services.easyname.eu",
+  "target": "/html/apps/wordpress-53017",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "103147ftp1",
+  "password": "7PBkSCj",
+  "watch": [],
+  "transport": "ftp"
+}
